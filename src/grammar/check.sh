@@ -24,7 +24,7 @@ check() {
     if [ $? -eq 1 ]; then
         cd $2 # This `cd` is so java will pick up RustLexer.class. I couldn't
         # figure out how to wrangle the CLASSPATH, just adding build/grammr didn't
-        # seem to have anny effect.
+        # seem to have any effect.
         if $3 RustLexer tokens -tokens < $1 | $4 $1 $5; then
             echo "pass: $1"
             passed=`expr $passed + 1`
